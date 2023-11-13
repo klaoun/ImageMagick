@@ -151,7 +151,7 @@ jobs:
         nmake release
 
     - name: Sign binaries
-      uses: azure/azure-code-signing-action@v0.2.21
+      uses: azure/azure-code-signing-action@v0.2.22
       with:
         azure-tenant-id: ${{ secrets.AZURE_TENANT_ID }}
         azure-client-id: ${{ secrets.AZURE_CLIENT_ID }}
@@ -173,7 +173,7 @@ jobs:
         "C:\Program Files (x86)\Inno Setup 6\iscc.exe" ImageMagick-Windows\VisualMagick\installer\im-${{matrix.platform}}${{matrix.hdri_flag}}-${{matrix.type}}-${{matrix.quantum}}.iss
 
     - name: Sign installer
-      uses: azure/azure-code-signing-action@v0.2.21
+      uses: azure/azure-code-signing-action@v0.2.22
       with:
         azure-tenant-id: ${{ secrets.AZURE_TENANT_ID }}
         azure-client-id: ${{ secrets.AZURE_CLIENT_ID }}
@@ -301,7 +301,7 @@ jobs:
         msbuild %solution% /m /t:Rebuild /p:Configuration=Release,Platform=${{matrix.platform}}
 
     - name: Sign executables
-      uses: azure/azure-code-signing-action@v0.2.21
+      uses: azure/azure-code-signing-action@v0.2.22
       with:
         azure-tenant-id: ${{ secrets.AZURE_TENANT_ID }}
         azure-client-id: ${{ secrets.AZURE_CLIENT_ID }}
